@@ -27,14 +27,15 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText etcorreo, etcontrasenia;
 
-    private Button btniniciar;
+    private Button btniniciar,btn;
     private String correo, contrasenia;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_login);
         mAuth = FirebaseAuth.getInstance();
+        btn=findViewById(R.id.btn);
 
         tvlogin = (TextView) findViewById(R.id.tvLogin);
         etcorreo = (EditText) findViewById(R.id.etCorreo);
@@ -53,8 +54,8 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         if (task.isSuccessful()) {
-                            Intent i = new Intent(LoginActivity.this, MainActivity.class);
-                            startActivity(i);
+                           // Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                            //startActivity(i);
                         } else {
                             Toast.makeText(LoginActivity.this, "Contraseña o Correo Incorrecto", Toast.LENGTH_SHORT).show();
                         }
@@ -64,6 +65,8 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+
+
 
 
     }

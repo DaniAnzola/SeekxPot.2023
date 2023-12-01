@@ -3,6 +3,7 @@ package com.project.seekxpot;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -65,7 +66,8 @@ public class RegisterActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
-                                        // Intent i= new Intent(Registro.this,LoginActivity.class);
+                                        Intent i= new Intent(RegisterActivity.this,LoginActivity.class);
+                                        startActivity(i);
                                     }
 
                                 }
