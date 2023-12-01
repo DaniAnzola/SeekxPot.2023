@@ -27,12 +27,13 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText etcorreo, etcontrasenia;
 
-    private Button btniniciar;
+    private Button btniniciar,btnRegister,btnGuest;
     private String correo, contrasenia;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -40,6 +41,9 @@ public class LoginActivity extends AppCompatActivity {
         etcorreo = (EditText) findViewById(R.id.etCorreo);
         etcontrasenia = (EditText) findViewById(R.id.etContrasenia);
         btniniciar = (Button) findViewById(R.id.btniniciar);
+        btnRegister = (Button) findViewById(R.id.btnRegister);
+        btnGuest = (Button) findViewById(R.id.btnGuest);
+
 
         btniniciar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +66,13 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
 
+            }
+        });
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent p = new Intent(LoginActivity.this,MainActivity.class);
+                startActivity(p);
             }
         });
 
