@@ -1,4 +1,4 @@
-package Pojo;
+package com.project.seekxpot.Pojo;
 
 import java.util.ArrayList;
 
