@@ -1,4 +1,3 @@
-
 package com.project.seekxpot.Pojo;
 
 public class Garito {
