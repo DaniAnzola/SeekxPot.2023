@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "957212521639",
+    "project_id": "seekxpot-94d16",
+    "storage_bucket": "seekxpot-94d16.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957212521639:android:d5117ea49cac851faf1782",
+        "android_client_info": {
+          "package_name": "com.project.seekxpot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHVK9hIxW4KuDzDj16Xugp0U88AwD0W7k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
