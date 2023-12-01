@@ -1,4 +1,4 @@
-package Pojo;
+package com.project.seekxpot.Pojo;
 
 import java.util.ArrayList;
 
@@ -20,6 +20,13 @@ public class Persona {
         this.edad = edad;
         Correo = correo;
         ArrGaritos = arrGaritos;
+    }
+
+    public Persona(String nombre, String apellido, int edad, String correo) {
+        Nombre = nombre;
+        Apellido = apellido;
+        this.edad = edad;
+        Correo = correo;
     }
 
     public String getNombre() {
