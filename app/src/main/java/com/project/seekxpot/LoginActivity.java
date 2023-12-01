@@ -36,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
+        btn=findViewById(R.id.btn);
 
         tvlogin = (TextView) findViewById(R.id.tvLogin);
         etcorreo = (EditText) findViewById(R.id.etCorreo);
