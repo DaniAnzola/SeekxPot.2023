@@ -22,6 +22,13 @@ public class Persona {
         ArrGaritos = arrGaritos;
     }
 
+    public Persona(String nombre, String apellido, int edad, String correo) {
+        Nombre = nombre;
+        Apellido = apellido;
+        this.edad = edad;
+        Correo = correo;
+    }
+
     public String getNombre() {
         return Nombre;
     }

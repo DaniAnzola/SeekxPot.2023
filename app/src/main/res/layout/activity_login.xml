@@ -54,7 +54,9 @@
         android:text="Iniciar"
         android:layout_below="@id/etContrasenia"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="30dp"/>
+
+
 
     <Button
         android:id="@+id/btnRegister"

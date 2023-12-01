@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    tools:context=".RegisterActivity">
 
     <TextView
         android:id="@+id/tvTitulo"
@@ -50,7 +49,7 @@
         android:hint="Edad" />
 
     <EditText
-        android:id="@+id/etCorreo"
+        android:id="@+id/etCorreoR"
         android:layout_width="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/etEdad"
@@ -61,19 +60,19 @@
 
 
     <EditText
-        android:id="@+id/etContrasenia"
+        android:id="@+id/etContraseniaR"
         android:layout_width="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/etCorreo"
+        android:layout_below="@+id/etCorreoR"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPassword"
         android:hint="Contraseña" />
 
     <Button
-        android:id="@+id/btRegistrar"
+        android:id="@+id/btnRegistrar"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/etContrasenia"
+        android:layout_below="@+id/etContraseniaR"
         android:layout_marginTop="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
