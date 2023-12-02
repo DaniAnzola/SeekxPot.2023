@@ -3,6 +3,7 @@ package com.project.seekxpot;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -26,6 +27,7 @@ public class RegisterActivity extends AppCompatActivity {
     private FirebaseUser fbUser;
     private Button btnRegistrar;
     private String nombre, correo, contrasenia, apellido;
+    private ProgressDialog progressDialog;
     private int edad;
 
     @Override
@@ -43,9 +45,13 @@ public class RegisterActivity extends AppCompatActivity {
         etContraseniaR = findViewById(R.id.etContraseniaR);
         btnRegistrar = findViewById(R.id.btnRegistrar);
 
+        progressDialog = new ProgressDialog(RegisterActivity.this);
+
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressDialog.setMessage("Guardando Datos . . .");
+                progressDialog.show();
                 nombre = etNombre.getText().toString().trim();
                 apellido = etApellido.getText().toString().trim();
                 edad = Integer.parseInt(etEdad.getText().toString().trim());
@@ -66,6 +72,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
+                                        progressDialog.dismiss();
                                         Intent i= new Intent(RegisterActivity.this,LoginActivity.class);
                                         startActivity(i);
                                     }

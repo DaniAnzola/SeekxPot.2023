@@ -3,6 +3,7 @@ package com.project.seekxpot;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -30,6 +31,8 @@ public class LoginActivity extends AppCompatActivity {
     private Button btniniciar,btnGuest;
     private String correo, contrasenia;
 
+    private ProgressDialog progressDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,10 +48,15 @@ public class LoginActivity extends AppCompatActivity {
         tvregistro = (TextView) findViewById(R.id.tvRegister);
         btnGuest = (Button) findViewById(R.id.btnGuest);
 
+        progressDialog = new ProgressDialog(LoginActivity.this);
+
 
         btniniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                progressDialog.setMessage("Iniciando Session. . . .");
+                progressDialog.show();
 
                 correo = etcorreo.getText().toString().trim();
                 contrasenia = etcontrasenia.getText().toString().trim();
@@ -59,6 +67,7 @@ public class LoginActivity extends AppCompatActivity {
                         //CAMBIAR AL HOME
 
                         if (task.isSuccessful()) {
+                            progressDialog.dismiss();
                             Intent i = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(i);
                         } else {
@@ -73,7 +82,7 @@ public class LoginActivity extends AppCompatActivity {
         tvregistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent p = new Intent(LoginActivity.this,MainActivity.class);
+                Intent p = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(p);
             }
         });
