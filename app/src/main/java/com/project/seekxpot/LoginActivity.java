@@ -23,11 +23,11 @@ public class LoginActivity extends AppCompatActivity {
 
     private FirebaseUser fbUser;
 
-    private TextView tvlogin;
+    private TextView tvlogin, tvregistro;
 
     private EditText etcorreo, etcontrasenia;
 
-    private Button btniniciar,btnRegister,btnGuest;
+    private Button btniniciar,btnGuest;
     private String correo, contrasenia;
 
     @Override
@@ -36,13 +36,13 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
-        btn=findViewById(R.id.btn);
+
 
         tvlogin = (TextView) findViewById(R.id.tvLogin);
         etcorreo = (EditText) findViewById(R.id.etCorreo);
         etcontrasenia = (EditText) findViewById(R.id.etContrasenia);
         btniniciar = (Button) findViewById(R.id.btniniciar);
-        btnRegister = (Button) findViewById(R.id.btnRegister);
+        tvregistro = (TextView) findViewById(R.id.tvRegister);
         btnGuest = (Button) findViewById(R.id.btnGuest);
 
 
@@ -56,10 +56,11 @@ public class LoginActivity extends AppCompatActivity {
                 mAuth.signInWithEmailAndPassword(correo, contrasenia).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        //CAMBIAR AL HOME
 
                         if (task.isSuccessful()) {
-                           // Intent i = new Intent(LoginActivity.this, MainActivity.class);
-                            //startActivity(i);
+                            Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(i);
                         } else {
                             Toast.makeText(LoginActivity.this, "Contraseña o Correo Incorrecto", Toast.LENGTH_SHORT).show();
                         }
@@ -69,7 +70,7 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
-        btnRegister.setOnClickListener(new View.OnClickListener() {
+        tvregistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent p = new Intent(LoginActivity.this,MainActivity.class);
