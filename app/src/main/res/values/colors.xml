@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="Fondo">##80C3D1</color>
+    <color name="white">#FF000000</color>
+    <color name="morado_oscuro">#B580D1</color>
+    <color name="morado">#b680d1</color>
+    <color name="morado_uva">#6A4364</color>
+    <color name="blue">#0288D1</color>
+    <color name="blue_dark">#809bd1</color>
+    <color name="blue_light">#80c3d1</color>
+    <color name="colorDeFondo">#B0C1E2</color>
 </resources>
