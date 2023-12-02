@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
-        btn=findViewById(R.id.btn);
+
 
         tvlogin = (TextView) findViewById(R.id.tvLogin);
         etcorreo = (EditText) findViewById(R.id.etCorreo);
@@ -58,6 +58,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         if (task.isSuccessful()) {
+                            //TODO ME FALTA POR HACER INICIAR SECION
                            // Intent i = new Intent(LoginActivity.this, MainActivity.class);
                             //startActivity(i);
                         } else {
@@ -72,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent p = new Intent(LoginActivity.this,MainActivity.class);
+                Intent p = new Intent(LoginActivity.this,RegisterActivity.class);
                 startActivity(p);
             }
         });
