@@ -16,6 +16,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.project.seekxpot.Pojo.Garito;
 import com.project.seekxpot.Pojo.Persona;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -53,7 +54,7 @@ public class RegisterActivity extends AppCompatActivity {
                 contrasenia = etContraseniaR.getText().toString().trim();
 
 
-                Persona u = new Persona(nombre, apellido, edad, correo);
+                Persona u = new Persona(nombre,apellido,edad,correo);
 
                 mAuth.createUserWithEmailAndPassword(correo, contrasenia).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
