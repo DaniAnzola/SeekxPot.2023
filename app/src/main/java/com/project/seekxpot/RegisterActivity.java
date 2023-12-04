@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -21,13 +22,13 @@ import com.project.seekxpot.Pojo.Garito;
 import com.project.seekxpot.Pojo.Persona;
 
 public class RegisterActivity extends AppCompatActivity {
-    private EditText etNombre, etApellido, etCorreoR, etEdad, etContraseniaR;
+    private EditText etNombre, etApellido, etCorreoR, etEdad, etContraseniaR, etContrasenia2;
     private FirebaseAuth mAuth;
 
     private DatabaseReference mRef;
     private FirebaseUser fbUser;
     private Button btnRegistrar;
-    private String nombre, correo, contrasenia, apellido;
+    private String nombre, correo, contrasenia, contrasenia2, apellido;
     private ProgressDialog progressDialog;
     private int edad;
 
@@ -45,6 +46,7 @@ public class RegisterActivity extends AppCompatActivity {
         etEdad = findViewById(R.id.etEdad);
         etContraseniaR = findViewById(R.id.etContraseniaR);
         btnRegistrar = findViewById(R.id.btnRegistrar);
+        etContrasenia2 = findViewById(R.id.etContrasenia2);
 
         progressDialog = new ProgressDialog(RegisterActivity.this);
 
@@ -58,14 +60,16 @@ public class RegisterActivity extends AppCompatActivity {
                 edad = Integer.parseInt(etEdad.getText().toString().trim());
                 correo = etCorreoR.getText().toString().trim();
                 contrasenia = etContraseniaR.getText().toString().trim();
+                contrasenia2 = etContrasenia2.getText().toString().trim();
 
 
-                Persona u = new Persona(nombre,apellido,edad,correo);
+                Persona u = new Persona(nombre, apellido, edad, correo);
 
                 mAuth.createUserWithEmailAndPassword(correo, contrasenia).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+
                             fbUser = mAuth.getCurrentUser();
                             String uid = fbUser.getUid();
 
@@ -74,7 +78,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
                                         progressDialog.dismiss();
-                                        Intent i= new Intent(RegisterActivity.this,LoginActivity.class);
+                                        Intent i = new Intent(RegisterActivity.this, LoginActivity.class);
                                         startActivity(i);
                                     }
 
@@ -93,4 +97,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
     }
-}
+
+    }
+
+

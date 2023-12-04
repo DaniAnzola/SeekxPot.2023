@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/tvTitulo"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:textSize="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,7 +22,7 @@
         android:paddingStart="10dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/tvTitulo"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="90dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
@@ -35,7 +35,7 @@
         android:layout_below="@+id/etNombre"
         android:background="@drawable/custom_edt"
         android:paddingStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
@@ -48,10 +48,10 @@
         android:background="@drawable/custom_edt"
         android:paddingStart="10dp"
         android:layout_below="@+id/etApellido"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="30dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="text"
+        android:inputType="number"
         android:hint="Edad" />
 
     <EditText
@@ -61,7 +61,7 @@
         android:paddingStart="10dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/etEdad"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="30dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
@@ -73,7 +73,20 @@
         android:layout_width="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/etCorreoR"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/custom_edt"
+        android:paddingStart="10dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="Contraseña" />
+
+    <EditText
+        android:id="@+id/etContrasenia2"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/etContraseniaR"
+        android:layout_marginTop="30dp"
         android:background="@drawable/custom_edt"
         android:paddingStart="10dp"
         android:layout_height="wrap_content"
@@ -84,8 +97,8 @@
     <Button
         android:id="@+id/btnRegistrar"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/etContraseniaR"
-        android:layout_marginTop="30dp"
+        android:layout_below="@+id/etContrasenia2"
+        android:layout_marginTop="60dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Registrar" />
