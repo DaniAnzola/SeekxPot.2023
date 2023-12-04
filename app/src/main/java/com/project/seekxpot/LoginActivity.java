@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseUser fbUser;
 
-    private TextView tvlogin, tvregistro;
+    private TextView tvlogin, tvregistro,tvRecuperar;
 
     private EditText etcorreo, etcontrasenia;
 
@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
         btniniciar = (Button) findViewById(R.id.btniniciar);
         tvregistro = (TextView) findViewById(R.id.tvRegister);
         btnGuest = (Button) findViewById(R.id.btnGuest);
-
+        tvRecuperar=findViewById(R.id.tvRecuperar);
         progressDialog = new ProgressDialog(LoginActivity.this);
 
 
@@ -95,7 +95,13 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(p);
             }
         });
-
+        tvRecuperar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(LoginActivity.this,Recuperar_contrasenia.class);
+                startActivity(i);
+            }
+        });
 
     }
 }

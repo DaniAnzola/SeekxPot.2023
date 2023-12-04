@@ -50,6 +50,14 @@
         android:layout_centerHorizontal="true"/>
 
 
+    <TextView
+        android:id="@+id/tvRecuperar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/etContrasenia"
+        android:layout_marginTop="10dp"
+        android:text="Olvide la Contraseña" />
 
     <Button
         android:id="@+id/btniniciar"
