@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">SeekxPot</string>
     <string name="btnEditarPerfil">EDITAR TU PERFIL</string>
+    <string name="bottonavPerfil">Perfil</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
