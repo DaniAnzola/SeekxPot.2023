@@ -42,7 +42,7 @@ public class PerfilActivity extends AppCompatActivity {
         btnGuardados =findViewById(R.id.btnGuardados);
 
         mAuth = FirebaseAuth.getInstance();
-        mRef = FirebaseDatabase.getInstance().getReference().child("usuario");
+        mRef = FirebaseDatabase.getInstance().getReference().child("Usuarios");
         fbUser = mAuth.getCurrentUser();// esto siempre sera despues de la isntancia de mAuth
 
         String uId = fbUser.getUid();
