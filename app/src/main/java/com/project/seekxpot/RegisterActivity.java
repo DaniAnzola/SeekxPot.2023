@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,6 +22,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.project.seekxpot.Pojo.Garito;
 import com.project.seekxpot.Pojo.Persona;
 
+import java.util.regex.Pattern;
+
 public class RegisterActivity extends AppCompatActivity {
     private EditText etNombre, etApellido, etCorreoR, etEdad, etContraseniaR, etContrasenia2;
     private FirebaseAuth mAuth;
@@ -29,6 +32,10 @@ public class RegisterActivity extends AppCompatActivity {
     private FirebaseUser fbUser;
     private Button btnRegistrar;
     private String nombre, correo, contrasenia, contrasenia2, apellido;
+
+    private static final String EMAIL_PATTERN ="^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+    private static final Pattern pattern = Pattern.compile(EMAIL_PATTERN);
+
     private ProgressDialog progressDialog;
     private int edad;
 
@@ -62,7 +69,19 @@ public class RegisterActivity extends AppCompatActivity {
                 contrasenia = etContraseniaR.getText().toString().trim();
                 contrasenia2 = etContrasenia2.getText().toString().trim();
 
+                //TODO VALIDAR QUE ME INTRODUCE LOS DATOS QUE ME GUSTAN
 
+                if(contrasenia.equals(contrasenia2)){// VALIDACION CONTRASEÑA
+                    if(pattern.matcher(correo).matches()){//VALIDACION DE CORREO
+
+
+                    }else{
+                        Toast.makeText(RegisterActivity.this, "Introduce un Correo valido", Toast.LENGTH_SHORT).show();
+                    }
+                }else{
+                    Toast.makeText(RegisterActivity.this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
+                }
+                progressDialog.dismiss();
                 Persona u = new Persona(nombre, apellido, edad, correo);
 
                 mAuth.createUserWithEmailAndPassword(correo, contrasenia).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -72,6 +91,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                             fbUser = mAuth.getCurrentUser();
                             String uid = fbUser.getUid();
+
 
                             mRef.child(uid).setValue(u).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
@@ -84,8 +104,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                                 }
                             });
-
-
+                        //TODO HACER PERMISOS DE PRIVACIDAD
                         }
 
 

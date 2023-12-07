@@ -94,6 +94,34 @@
         android:inputType="textPassword"
         android:hint="Contraseña" />
 
+    <LinearLayout
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etContrasenia2"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal">
+
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="8dp"
+            android:layout_weight="1"
+            android:text="Acepto" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:textSize="8dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="el Uso de datos y Politica de Privacidad " />
+    </LinearLayout>
+
     <Button
         android:id="@+id/btnRegistrar"
         android:layout_centerHorizontal="true"

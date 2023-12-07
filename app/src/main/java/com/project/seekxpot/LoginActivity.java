@@ -80,6 +80,8 @@ public class LoginActivity extends AppCompatActivity {
                             Intent i = new Intent(LoginActivity.this, HomeActivity.class);
                             startActivity(i);
                         } else {
+                            etcontrasenia.setText("");
+                            progressDialog.dismiss();
                             Toast.makeText(LoginActivity.this, "Contraseña o Correo Incorrecto", Toast.LENGTH_SHORT).show();
                         }
 
