@@ -114,12 +114,12 @@
             android:text="Acepto" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/tvpolitica"
             android:layout_width="wrap_content"
             android:textSize="8dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="el Uso de datos y Politica de Privacidad " />
+            android:text="El Uso de datos y Politica de Privacidad " />
     </LinearLayout>
 
     <Button
