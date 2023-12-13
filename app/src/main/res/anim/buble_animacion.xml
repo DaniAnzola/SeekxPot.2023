@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Efecto de translación hacia arriba con retraso de 500 milisegundos -->
+    <translate
+        android:fromYDelta="0%"
+        android:toYDelta="-50%"
+        android:duration="2000"
+        android:startOffset="500"/>
+
+    <!-- Efecto de opacidad con retraso de 500 milisegundos -->
+    <alpha
+        android:fromAlpha="1.0"
+        android:toAlpha="0.0"
+        android:duration="2000"
+        android:startOffset="1000"/>
+</set>

@@ -1,16 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ <RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".SplashArtActivity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SPLASH...ART"
-        android:textSize="45dp"
-        android:layout_centerInParent="true"/>
+
+    <ImageView
+        android:id="@+id/fondo"
+        android:layout_width="328dp"
+        android:layout_height="253dp"
+        android:visibility="visible"
+        app:srcCompat="@drawable/fondo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        />
+
+   <ImageView
+       android:id="@+id/cerveza"
+       android:layout_width="361dp"
+       android:layout_height="207dp"
+       android:layout_marginTop="230dp"
+       android:src="@drawable/cerveza"
+
+       />
+
+   <ImageView
+       android:id="@+id/seekxpot"
+       android:layout_width="300dp"
+       android:layout_height="200dp"
+       android:layout_centerHorizontal="true"
+       android:layout_marginLeft="44dp"
+       android:layout_marginTop="230dp"
+       android:visibility="visible"
+       app:srcCompat="@drawable/letras" />
+
+   <ImageView
+        android:id="@+id/burbuja"
+        android:layout_width="10dp"
+        android:layout_height="20dp"
+       android:layout_marginBottom="150dp"
+        android:layout_alignLeft="@+id/seekxpot"
+        android:layout_alignBottom="@+id/seekxpot"
+        android:layout_marginLeft="100dp"
+        android:visibility="visible"
+        app:srcCompat="@drawable/burbuja" />
+
+    <ImageView
+        android:id="@+id/burbuja1"
+        android:layout_width="10dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="170dp"
+        android:layout_alignLeft="@+id/seekxpot"
+        android:layout_alignBottom="@+id/seekxpot"
+        android:layout_marginLeft="120dp"
+        android:visibility="visible"
+        app:srcCompat="@drawable/burbuja" />
+
+    <ImageView
+        android:id="@+id/burbuja2"
+        android:layout_width="10dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="160dp"
+        android:layout_alignLeft="@+id/seekxpot"
+        android:layout_alignBottom="@+id/seekxpot"
+        android:layout_marginLeft="140dp"
+        android:visibility="visible"
+        app:srcCompat="@drawable/burbuja" />
+
+
+    <ImageView
+        android:id="@+id/burbuja3"
+        android:layout_width="10dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="180dp"
+        android:layout_alignLeft="@+id/seekxpot"
+        android:layout_alignBottom="@+id/seekxpot"
+        android:layout_marginLeft="150dp"
+        android:visibility="visible"
+        app:srcCompat="@drawable/burbuja" />
+
+    <ImageView
+        android:id="@+id/burbuja4"
+        android:layout_width="10dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="150dp"
+        android:layout_alignLeft="@+id/seekxpot"
+        android:layout_alignBottom="@+id/seekxpot"
+        android:layout_marginLeft="180dp"
+        android:visibility="visible"
+        app:srcCompat="@drawable/burbuja" />
+
 </RelativeLayout>
